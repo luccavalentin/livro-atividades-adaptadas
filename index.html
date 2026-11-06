@@ -3,15 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Livro de Atividades Adaptadas — 1.000 atividades por série, da Pré-escola ao Ensino Médio</title>
+<meta name="description" content="13.000 atividades adaptadas para estudantes com deficiência, em todas as matérias, da Pré-escola ao 3º ano do Ensino Médio. PDF para imprimir, com aula de exemplo, passo a passo e gabarito.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Livro de Atividades Adaptadas — 13.000 atividades prontas para imprimir">
+<meta property="og:description" content="Da Pré-escola ao 3º ano do Ensino Médio, todas as matérias. Entrega imediata por e-mail.">
+<meta property="og:image" content="https://luccavalentin.github.io/livro-atividades-adaptadas/img/hero-livro.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#0F2741">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-livro.png" fetchpriority="high">
 <script>
-  /* ===== CONFIGURAÇÃO — preencha estas duas linhas ===== */
-  const CHECKOUT_URL = "https://pay.kiwify.com.br/hMvTsNy"; // ex.: https://pay.kiwify.com.br/XXXXXXX
-  const PIXEL_ID = "COLE_AQUI_O_ID_DO_PIXEL";                 // ex.: 123456789012345
-  /* ===================================================== */
+  /* ===== CONFIGURAÇÃO ===== */
+  const CHECKOUT_URL = "https://pay.kiwify.com.br/hMvTsNy";
+  const PIXEL_ID = "COLE_AQUI_O_ID_DO_PIXEL";
+  /* ======================== */
   const PRODUTO = { nome: "Livro de Atividades Adaptadas", valor: 47, moeda: "BRL" };
   const PIXEL_OK = /^\d{6,20}$/.test(PIXEL_ID);
-
-  // Meta Pixel — código base padrão (só carrega se o PIXEL_ID foi preenchido)
   if (PIXEL_OK) {
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -24,727 +34,507 @@
   function rastrear(evento, dados) {
     if (PIXEL_OK && window.fbq) { try { fbq('track', evento, dados || {}); } catch (e) {} }
   }
-
-  // Se alguma imagem ainda não existir, mostra um quadro com o texto alternativo no lugar
-  document.addEventListener('error', function (e) {
-    var img = e.target;
-    if (!img || img.tagName !== 'IMG' || img.dataset.falhou) return;
-    img.dataset.falhou = '1';
-    var ph = document.createElement('span');
-    ph.className = 'img-ph';
-    ph.textContent = img.alt;
-    var w = img.getAttribute('width'), h = img.getAttribute('height');
-    if (w && h) ph.style.aspectRatio = w + ' / ' + h;
-    img.style.display = 'none';
-    img.insertAdjacentElement('afterend', ph);
-  }, true);
 </script>
-<!-- Para o Pixel funcionar sem JavaScript, cole aqui o <noscript> do Pixel com o seu ID, se quiser. -->
-
-<title>Livro de Atividades Adaptadas — Educação Especial, da Pré-escola ao Ensino Médio</title>
-<meta name="description" content="13.000 atividades adaptadas prontas para imprimir, da Pré-escola ao 3º ano do Ensino Médio, em todas as matérias. Com passo a passo, pictogramas, dica de adaptação, gabarito, guia de adaptações e modelo de PEI. Autoria: Carol Pantaleão.">
-<meta name="author" content="Carol Pantaleão">
-<meta name="theme-color" content="#1D70B8">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Livro de Atividades Adaptadas — 13.000 atividades prontas para imprimir">
-<meta property="og:description" content="Da Pré-escola ao 3º ano do Ensino Médio, todas as matérias. PDF para imprimir, entrega imediata por e-mail.">
-<meta property="og:image" content="https://luccavalentin.github.io/livro-atividades-adaptadas/img/capa-mockup.png">
-<meta property="og:locale" content="pt_BR">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/capa-mockup.png" fetchpriority="high">
-
 <style>
-:root{
-  --azul:#1D70B8; --azul-esc:#14528A; --laranja:#F4842B; --laranja-esc:#C9621A;
-  --vermelho:#E63946; --vermelho-txt:#C1121F; --verde:#2A9D8F; --verde-txt:#1F7A6F;
-  --amarelo:#FFC93C; --creme:#FFF9F0; --branco:#FFFFFF; --tinta:#1E2430; --tinta-2:#4A5262;
-  --linha:#EADFCF; --raio:18px; --sombra:0 10px 30px rgba(30,36,48,.10);
-  --titulo:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --texto:"Nunito Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  color-scheme:light;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--creme);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.6;-webkit-tap-highlight-color:transparent}
-img{max-width:100%;height:auto;display:block}
-h1,h2,h3{font-family:var(--titulo);line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
-h2{font-size:clamp(1.65rem,6.2vw,2.5rem);font-weight:900}
-h3{font-size:1.2rem;font-weight:800}
-p{margin:0 0 1em}
-a{color:var(--azul)}
-.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
-.sec{padding:56px 0}
-.sec--branca{background:var(--branco)}
-.sec--azul{background:#EAF3FB}
-.centro{text-align:center}
-.lead{font-size:1.1rem;color:var(--tinta-2);max-width:680px}
-.centro .lead{margin-left:auto;margin-right:auto}
-.selo{display:inline-block;font-family:var(--titulo);font-weight:800;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;
-  padding:6px 14px;border-radius:999px;background:var(--amarelo);color:var(--tinta);margin-bottom:14px}
-.skip{position:absolute;left:-999px;top:0;background:var(--tinta);color:#fff;padding:10px 14px;z-index:99}
-.skip:focus{left:8px;top:8px}
-:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+  :root {
+    --tinta: #0F2741;
+    --tinta-2: #3B4F66;
+    --azul: #1D70B8;
+    --azul-claro: #EAF2FB;
+    --nevoa: #F4F7FB;
+    --linha: #DCE4EE;
+    --verde: #087A3C;
+    --verde-escuro: #066431;
+    --amarelo: #FFC93C;
+    --vermelho: #D7263D;
+    --raio: 18px;
+    --sombra: 0 18px 40px -18px rgba(15, 39, 65, .35), 0 4px 10px -4px rgba(15, 39, 65, .12);
+    --display: "Bricolage Grotesque", "Atkinson Hyperlegible", system-ui, sans-serif;
+    --texto: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--tinta); font: 18px/1.6 var(--texto); }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--azul); text-underline-offset: 3px; }
+  ::selection { background: var(--amarelo); color: var(--tinta); }
+  :focus-visible { outline: 3px solid var(--amarelo); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.08; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+  h2 { font-size: clamp(1.9rem, 4.6vw, 3.1rem); font-weight: 800; }
+  h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.01em; }
+  p { margin: 0; }
+  .w { width: min(1160px, 100% - 32px); margin-inline: auto; }
+  .sec { padding: clamp(64px, 9vw, 120px) 0; }
+  .lead { font-size: clamp(1.08rem, 2vw, 1.22rem); color: var(--tinta-2); max-width: 60ch; }
+  .ic { width: 22px; height: 22px; flex: none; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
-/* Botão de compra */
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;padding:14px 24px;border-radius:999px;
-  background:var(--laranja);color:var(--tinta);font-family:var(--titulo);font-weight:900;font-size:1.2rem;text-decoration:none;text-align:center;
-  box-shadow:0 6px 0 var(--laranja-esc),0 12px 24px rgba(244,132,43,.35);transition:transform .12s ease,box-shadow .12s ease;border:0;cursor:pointer}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--laranja-esc),0 6px 12px rgba(244,132,43,.3)}
-.btn svg{width:22px;height:22px;flex:none}
-.cta{max-width:460px;margin:28px auto 0}
-.cta small{display:block;text-align:center;margin-top:14px;color:var(--tinta-2);font-size:.95rem}
+  /* botão de compra */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 60px; padding: 16px 30px;
+         background: var(--verde); color: #fff; font: 700 1.12rem/1.2 var(--texto); text-decoration: none; border-radius: 14px;
+         box-shadow: 0 10px 20px -10px rgba(10, 28, 48, .55), inset 0 -3px 0 rgba(0, 0, 0, .18);
+         transition: transform .2s cubic-bezier(.2, .8, .2, 1), background .2s; }
+  .btn { white-space: nowrap; }
+  .btn:hover { background: var(--verde-escuro); transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+  .btn .ic { width: 24px; height: 24px; }
+  .garantias { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px; font-size: .95rem; color: var(--tinta-2); }
+  .garantias span { display: inline-flex; align-items: center; gap: 7px; }
+  .garantias .ic { width: 18px; height: 18px; color: var(--verde); }
 
-/* Faixa de topo */
-.topbar{background:var(--tinta);color:#fff;font-size:.9rem;text-align:center;padding:8px 16px;font-weight:700}
-.topbar span{white-space:nowrap}
+  /* faixa topo */
+  .faixa { background: var(--tinta); color: #fff; font-size: .9rem; text-align: center; padding: 9px 16px; }
+  .faixa b { color: var(--amarelo); font-weight: 700; }
 
-/* Hero */
-.hero{background:var(--azul);color:#fff;position:relative;overflow:hidden;padding:36px 0 48px}
-.hero::before{content:"";position:absolute;inset:0;opacity:.13;pointer-events:none;
-  background-image:radial-gradient(#fff 2px,transparent 2.5px);background-size:26px 26px}
-.hero::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:var(--amarelo);opacity:.18;right:-120px;top:-120px}
-.hero .wrap{position:relative;z-index:1;display:grid;gap:8px}
-.hero .selo{justify-self:start}
-.hero h1{font-size:clamp(2rem,8.6vw,3.3rem);font-weight:900;color:#fff;margin-bottom:.4em}
-.hero h1 mark{background:none;color:var(--amarelo)}
-.hero .sub{font-size:1.12rem;color:#fff;max-width:560px}
-.hero-img{margin:4px auto 0;max-width:400px;width:100%;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28))}
-.hero .cta{margin-top:8px;width:100%}
-.confianca{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;font-size:.95rem;font-weight:700}
-.confianca li{display:flex;align-items:center;gap:6px}
-.confianca svg{width:18px;height:18px;flex:none}
+  /* hero */
+  .hero { position: relative; overflow: hidden; padding: clamp(36px, 6vw, 72px) 0 clamp(56px, 7vw, 96px); }
+  .hero .w { display: grid; gap: 28px; align-items: center; }
+  .abas { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(10px, 1.6vw, 22px); display: grid; grid-template-rows: repeat(13, 1fr); }
+  .abas i { display: block; }
+  .selo-serie { display: inline-flex; gap: 4px; margin-bottom: 18px; }
+  .selo-serie i { width: 22px; height: 8px; border-radius: 4px; display: block; }
+  .hero h1 { font-size: clamp(2.35rem, 6.4vw, 4.6rem); font-weight: 800; letter-spacing: -0.035em; }
+  .hero h1 em { font-style: normal; color: var(--azul); }
+  .hero .lead { margin: 20px 0 28px; }
+  .hero-img { width: 100%; max-width: 640px; margin-inline: auto; filter: drop-shadow(0 30px 40px rgba(15, 39, 65, .12)); }
+  @media (min-width: 900px) {
+    .hero .w { grid-template-columns: 1.02fr 1fr; gap: 40px; }
+    .hero-img { margin-right: -20px; }
+  }
 
-/* Números */
-.numeros{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:-28px;position:relative;z-index:2}
-.num{background:#fff;border-radius:var(--raio);padding:18px 14px;text-align:center;box-shadow:var(--sombra);border-top:6px solid var(--azul)}
-.num:nth-child(2){border-color:var(--laranja)}.num:nth-child(3){border-color:var(--verde)}.num:nth-child(4){border-color:var(--vermelho)}
-.num b{display:block;font-family:var(--titulo);font-weight:900;font-size:clamp(1.35rem,6.2vw,2.2rem);line-height:1.1;color:var(--azul-esc)}
-.num span{font-size:.95rem;color:var(--tinta-2);line-height:1.35;display:block;margin-top:4px}
+  /* seletor de séries */
+  .series { background: var(--nevoa); border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+  .series h2 { max-width: 18ch; }
+  .series .lead { margin-top: 14px; }
+  .tabs { display: flex; gap: 8px; margin: 32px 0 26px; overflow-x: auto; padding: 4px 2px 10px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+  .tab { flex: none; scroll-snap-align: start; border: 2px solid var(--c); background: #fff; color: var(--tinta); border-radius: 999px; padding: 10px 16px;
+         font: 700 .98rem/1 var(--texto); cursor: pointer; transition: background .2s, color .2s, transform .2s; min-height: 46px; }
+  .tab:hover { transform: translateY(-1px); }
+  .tab[aria-selected="true"] { background: var(--c); color: #fff; }
+  .painel { display: grid; gap: 28px; align-items: start; }
+  .folha { position: relative; background: #fff; border-radius: 10px; box-shadow: var(--sombra); overflow: hidden; }
+  .folha::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 8px; background: var(--c, var(--azul)); }
+  .folha img { width: 100%; aspect-ratio: 900 / 1273; object-fit: cover; transition: opacity .25s; }
+  .folha.trocando img { opacity: .25; }
+  .info h3 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); color: var(--c, var(--azul)); }
+  .info .faixa-etaria { color: var(--tinta-2); margin-top: 6px; }
+  .numeros { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 22px 0; padding: 18px 0; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+  .numeros div { font-size: .95rem; color: var(--tinta-2); }
+  .numeros b { display: block; font: 800 1.6rem/1.1 var(--display); color: var(--tinta); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 12px 0 0; }
+  .chips li { background: #fff; border: 1px solid var(--linha); border-radius: 999px; padding: 6px 12px; font-size: .92rem; }
+  .info .rotulo { font-weight: 700; margin-top: 4px; }
+  .info .btn { margin-top: 26px; }
+  @media (min-width: 900px) { .tabs { flex-wrap: wrap; overflow: visible; } .painel { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; } .folha { position: sticky; top: 24px; } }
 
-/* Dor */
-.dores{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
-.dores li{background:#fff;border-radius:var(--raio);padding:16px 18px 16px 58px;position:relative;box-shadow:0 2px 0 var(--linha)}
-.dores li::before{content:"";position:absolute;left:16px;top:16px;width:28px;height:28px;border-radius:50%;background:#FDE3E5;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C1121F' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E");
-  background-size:16px;background-repeat:no-repeat;background-position:center}
-.virada{margin-top:24px;background:var(--verde-txt);color:#fff;border-radius:var(--raio);padding:22px 20px;font-size:1.1rem}
-.virada strong{color:var(--amarelo)}
+  /* dor */
+  .dor { background: var(--tinta); color: #fff; }
+  .dor h2 { color: #fff; max-width: 20ch; }
+  .cenas { margin-top: 40px; display: grid; gap: 0; }
+  .cena { display: grid; grid-template-columns: auto 1fr; gap: 18px; padding: 24px 0; border-top: 1px solid rgba(255, 255, 255, .16); font-size: clamp(1.1rem, 2.2vw, 1.4rem); line-height: 1.45; }
+  .cena:last-child { border-bottom: 1px solid rgba(255, 255, 255, .16); }
+  .cena span { font: 800 1rem/1 var(--display); color: var(--tinta); background: var(--amarelo); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; margin-top: 4px; }
+  .dor .virada { margin-top: 40px; font-size: clamp(1.25rem, 2.6vw, 1.7rem); font-family: var(--display); font-weight: 600; max-width: 34ch; }
+  .dor .virada b { color: var(--amarelo); font-weight: 800; }
 
-/* Livro */
-.livro-grid{display:grid;gap:28px;align-items:center}
-.series-img{border-radius:var(--raio);background:#fff;box-shadow:var(--sombra);padding:10px}
-figcaption{font-size:.95rem;color:var(--tinta-2);text-align:center;margin-top:10px}
+  /* anatomia */
+  .anatomia .w { display: grid; gap: 40px; align-items: center; }
+  .pagina-real { position: relative; border-radius: 10px; box-shadow: var(--sombra); overflow: visible; background: #fff; }
+  .pagina-real img { border-radius: 10px; }
+  .pino { position: absolute; transform: translate(-50%, -50%); width: 34px; height: 34px; border-radius: 50%; background: var(--vermelho); color: #fff;
+          font: 800 1rem/34px var(--display); text-align: center; box-shadow: 0 0 0 5px rgba(215, 38, 61, .22); }
+  .partes { list-style: none; padding: 0; margin: 28px 0 0; counter-reset: p; }
+  .partes li { display: grid; grid-template-columns: 34px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--linha); }
+  .partes li::before { counter-increment: p; content: counter(p); width: 34px; height: 34px; border-radius: 50%; background: var(--vermelho); color: #fff; font: 800 1rem/34px var(--display); text-align: center; }
+  .partes b { display: block; }
+  .partes p { color: var(--tinta-2); font-size: 1rem; }
+  @media (min-width: 900px) { .anatomia .w { grid-template-columns: 1fr 1.05fr; gap: 72px; } }
 
-/* Anatomia */
-.anatomia{display:grid;gap:28px;align-items:start}
-.pagina-destaque{background:#fff;border-radius:var(--raio);box-shadow:var(--sombra);padding:10px;max-width:420px;margin:0 auto;width:100%}
-.pagina-destaque img{border-radius:10px}
-.passos-lista{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:p}
-.passos-lista li{counter-increment:p;padding-left:52px;position:relative}
-.passos-lista li::before{content:counter(p);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;
-  display:grid;place-items:center;font-family:var(--titulo);font-weight:900;color:#fff;background:var(--azul)}
-.passos-lista li:nth-child(2)::before{background:var(--laranja-esc)}.passos-lista li:nth-child(3)::before{background:var(--verde-txt)}
-.passos-lista li:nth-child(4)::before{background:var(--vermelho-txt)}.passos-lista li:nth-child(5)::before{background:var(--tinta)}
-.passos-lista b{font-family:var(--titulo);font-size:1.08rem}
-.aula-box{margin-top:22px;border:2px dashed var(--azul);border-radius:var(--raio);padding:18px;background:#fff}
-.aula-box h3{color:var(--azul-esc)}
+  /* aula */
+  .aula { background: var(--azul-claro); }
+  .aula .w { display: grid; gap: 40px; align-items: center; }
+  .pilha { position: relative; padding: 0 8% 8% 0; }
+  .pilha img { border-radius: 10px; box-shadow: var(--sombra); }
+  .pilha img + img { position: absolute; width: 62%; right: 0; bottom: 0; transform: rotate(4deg); border: 6px solid #fff; }
+  .passos { display: grid; gap: 14px; margin-top: 28px; }
+  .passos div { display: flex; gap: 14px; align-items: flex-start; }
+  .passos .ic { color: var(--azul); width: 28px; height: 28px; margin-top: 2px; }
+  @media (min-width: 900px) { .aula .w { grid-template-columns: 1.05fr 1fr; gap: 72px; } .aula .texto { order: 2; } }
 
-/* Galeria */
-.galeria{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 16px 18px;margin:24px -16px 0;
-  -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin}
-.galeria button{flex:0 0 74%;max-width:320px;scroll-snap-align:center;border:0;padding:8px;background:#fff;border-radius:14px;
-  box-shadow:var(--sombra);cursor:zoom-in;font:inherit;color:inherit}
-.galeria img{border-radius:8px;width:100%}
-.dica-deslize{font-size:.95rem;color:var(--tinta-2);margin:6px 0 0;text-align:center;font-weight:700}
-.img-ph{display:flex;align-items:center;justify-content:center;width:100%;min-height:120px;padding:16px;text-align:center;font-size:.95rem;
-  color:var(--tinta-2);background:repeating-linear-gradient(45deg,#F3ECE1,#F3ECE1 10px,#FBF6EE 10px,#FBF6EE 20px);border-radius:10px}
-dialog.zoom{border:0;padding:0;background:transparent;max-width:min(96vw,760px);max-height:96vh;width:100%}
-dialog.zoom::backdrop{background:rgba(20,24,32,.85)}
-dialog.zoom img{width:100%;max-height:88vh;object-fit:contain;border-radius:10px;background:#fff}
-.fechar{position:absolute;top:8px;right:8px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:var(--tinta);
-  font-size:1.6rem;font-weight:900;cursor:pointer;box-shadow:var(--sombra);line-height:1}
+  /* para quem */
+  .quem h2 { max-width: 16ch; }
+  .perfis { margin-top: 36px; display: grid; gap: 0; }
+  .perfil { display: grid; gap: 6px 28px; padding: 26px 0; border-top: 2px solid var(--tinta); }
+  .perfil h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
+  .perfil p { color: var(--tinta-2); max-width: 62ch; }
+  @media (min-width: 900px) { .perfil { grid-template-columns: 1fr 1.6fr; } }
 
-/* O que tem dentro */
-.cards{display:grid;gap:16px;margin-top:24px}
-.card{background:#fff;border-radius:var(--raio);padding:22px 20px;box-shadow:var(--sombra);border-left:6px solid var(--azul)}
-.card:nth-child(2){border-color:var(--laranja)}.card:nth-child(3){border-color:var(--verde)}.card:nth-child(4){border-color:var(--vermelho)}
-.card:nth-child(5){border-color:var(--amarelo)}.card:nth-child(6){border-color:var(--azul)}
-.card p:last-child,.card ul:last-child{margin-bottom:0}
-.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:10px 0 0}
-.chips li{background:#EAF3FB;color:var(--azul-esc);border-radius:999px;padding:5px 12px;font-weight:700;font-size:.95rem}
-.chips--lar li{background:#FEEBDD;color:#8A3D07}
-.chips--ver li{background:#E1F3F0;color:#175E55}
-.check{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
-.check li{padding-left:30px;position:relative}
-.check li::before{content:"";position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--verde-txt);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
-  background-size:14px;background-repeat:no-repeat;background-position:center}
-.destaque{margin-top:24px;background:var(--amarelo);border-radius:var(--raio);padding:22px 20px}
-.destaque h3{font-size:1.3rem}
-.destaque p:last-child{margin:0}
+  /* o que recebe + oferta */
+  .oferta { background: var(--nevoa); border-top: 1px solid var(--linha); }
+  .oferta .w { display: grid; gap: 44px; align-items: center; }
+  .itens { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 14px; }
+  .itens li { display: flex; gap: 12px; align-items: flex-start; }
+  .itens .ic { color: var(--verde); margin-top: 3px; }
+  .caixa { background: #fff; border-radius: 24px; box-shadow: var(--sombra); padding: clamp(24px, 4vw, 40px); border: 1px solid var(--linha); }
+  .caixa img { margin: -10px auto 4px; max-width: 520px; width: 100%; }
+  .preco { text-align: center; margin: 10px 0 22px; }
+  .preco .valor { font: 800 clamp(3.4rem, 9vw, 4.6rem)/1 var(--display); letter-spacing: -0.04em; }
+  .preco .valor small { font-size: .42em; vertical-align: .9em; margin-right: 4px; letter-spacing: 0; }
+  .preco p { color: var(--tinta-2); margin-top: 8px; }
+  .caixa .btn { width: 100%; }
+  .caixa .garantias { justify-content: center; }
+  .pagamento { display: flex; justify-content: center; gap: 10px; margin-top: 18px; font-size: .88rem; color: var(--tinta-2); align-items: center; }
+  @media (min-width: 900px) { .oferta .w { grid-template-columns: 1fr 1fr; gap: 64px; } }
 
-/* Para quem */
-.publicos{display:grid;gap:16px;margin-top:24px}
-.publico{background:#fff;border-radius:var(--raio);padding:22px 20px;box-shadow:var(--sombra);position:relative;overflow:hidden}
-.publico::before{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:var(--c,#EAF3FB)}
-.publico h3{position:relative;padding-right:40px}
-.publico p{margin:0;position:relative}
-.nao-e{margin-top:20px;border-radius:var(--raio);padding:18px 20px;background:#fff;border:2px solid var(--linha);font-size:1rem;color:var(--tinta-2)}
+  /* garantia */
+  .garantia .w { display: grid; gap: 28px; align-items: center; }
+  .selo { width: 168px; height: 168px; margin-inline: auto; }
+  .garantia h2 { font-size: clamp(1.7rem, 3.8vw, 2.5rem); }
+  .garantia p { color: var(--tinta-2); margin-top: 14px; max-width: 60ch; }
+  @media (min-width: 900px) { .garantia .w { grid-template-columns: 200px 1fr; gap: 48px; } }
 
-/* Como funciona */
-.etapas{display:grid;gap:16px;margin-top:24px;list-style:none;padding:0;counter-reset:e}
-.etapas li{counter-increment:e;background:#fff;border-radius:var(--raio);padding:22px 20px 22px 84px;position:relative;box-shadow:var(--sombra)}
-.etapas li::before{content:counter(e);position:absolute;left:18px;top:20px;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
-  font-family:var(--titulo);font-weight:900;font-size:1.5rem;background:var(--amarelo);color:var(--tinta)}
-.etapas h3{margin-bottom:.25em}
-.etapas p{margin:0}
+  /* autoria */
+  .autoria { border-top: 1px solid var(--linha); }
+  .autoria .w { display: grid; gap: 18px; }
+  .autoria .nome { font: 800 clamp(1.6rem, 3.6vw, 2.4rem)/1.1 var(--display); }
+  .autoria p { color: var(--tinta-2); max-width: 66ch; }
 
-/* Entregáveis */
-.entrega{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
-.entrega li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:#fff;border-radius:var(--raio);padding:16px;box-shadow:0 2px 0 var(--linha)}
-.entrega .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--c,#EAF3FB)}
-.entrega .ico svg{width:24px;height:24px}
-.entrega b{font-family:var(--titulo);font-size:1.08rem;display:block;line-height:1.3}
-.entrega span{color:var(--tinta-2);font-size:1rem}
+  /* faq */
+  .faq { background: var(--nevoa); border-top: 1px solid var(--linha); }
+  .faq .w { max-width: 860px; }
+  details { border-bottom: 1px solid var(--linha); }
+  details:first-of-type { border-top: 1px solid var(--linha); margin-top: 30px; }
+  summary { list-style: none; cursor: pointer; padding: 22px 44px 22px 0; position: relative; font: 700 1.1rem/1.4 var(--texto); }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: ""; position: absolute; right: 8px; top: 50%; width: 12px; height: 12px; border-right: 3px solid var(--azul); border-bottom: 3px solid var(--azul);
+                   transform: translateY(-70%) rotate(45deg); transition: transform .25s; }
+  details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+  details p { padding: 0 0 22px; color: var(--tinta-2); max-width: 68ch; }
 
-/* Autoria */
-.autoria{background:#fff;border-radius:var(--raio);padding:26px 22px;box-shadow:var(--sombra);border-top:6px solid var(--verde);max-width:760px;margin:0 auto}
-.autoria .nome{font-family:var(--titulo);font-weight:900;font-size:1.35rem;color:var(--verde-txt);margin-bottom:.6em}
+  /* final */
+  .final { background: var(--tinta); color: #fff; text-align: center; }
+  .final h2 { color: #fff; max-width: 20ch; margin-inline: auto; }
+  .final p { color: #C9D6E5; margin: 18px auto 30px; max-width: 54ch; }
+  .final .garantias { justify-content: center; color: #C9D6E5; }
+  .final .garantias .ic { color: var(--amarelo); }
 
-/* Oferta */
-.oferta{background:var(--azul);color:#fff;position:relative;overflow:hidden}
-.oferta::before{content:"";position:absolute;inset:0;opacity:.12;background-image:radial-gradient(#fff 2px,transparent 2.5px);background-size:26px 26px;pointer-events:none}
-.oferta .wrap{position:relative}
-.oferta h2{color:#fff}
-.caixa{background:#fff;color:var(--tinta);border-radius:24px;padding:26px 20px;max-width:520px;margin:24px auto 0;box-shadow:0 20px 50px rgba(0,0,0,.25);text-align:center}
-.caixa .mini{max-width:220px;margin:-6px auto 6px}
-.caixa h3{font-size:1.3rem}
-.caixa .check{text-align:left;margin:16px 0 20px}
-.preco-de{color:var(--tinta-2);font-weight:700;font-size:1.05rem;margin:0}
-.preco-de s{color:var(--vermelho-txt);text-decoration-thickness:2px}
-.preco{font-family:var(--titulo);font-weight:900;color:var(--azul-esc);font-size:clamp(3.4rem,16vw,4.6rem);line-height:1;margin:6px 0 4px}
-.preco small{font-size:.4em;vertical-align:.9em;margin-right:4px}
-.parcelas{font-weight:800;font-size:1.08rem;margin:0 0 18px}
-.pagamento{font-size:.95rem;color:var(--tinta-2);margin-top:14px}
-.bump-nota{font-size:.95rem;background:#FFF4D6;border-radius:12px;padding:12px 14px;margin-top:16px;text-align:left}
+  footer { background: #0A1C30; color: #9FB3C8; font-size: .9rem; padding: 36px 0 120px; }
+  footer p + p { margin-top: 8px; }
+  footer a { color: #C9D6E5; }
 
-/* Garantia */
-.garantia{display:grid;gap:20px;align-items:center;justify-items:center;text-align:center;max-width:760px;margin:0 auto}
-.selo-g{width:150px;height:150px;border-radius:50%;background:var(--verde-txt);color:#fff;display:grid;place-items:center;text-align:center;
-  font-family:var(--titulo);font-weight:900;line-height:1.05;box-shadow:0 0 0 8px #fff,0 0 0 12px var(--verde-txt);padding:10px}
-.selo-g b{font-size:3rem;display:block}
-.selo-g span{font-size:.95rem;text-transform:uppercase;letter-spacing:.05em}
+  /* barra fixa (celular) */
+  .barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: #fff; border-top: 1px solid var(--linha); box-shadow: 0 -10px 30px -12px rgba(15, 39, 65, .35);
+           padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); display: flex; align-items: center; gap: 14px; transform: translateY(110%); transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+  .barra.on { transform: none; }
+  .barra .bp { font: 800 1.5rem/1 var(--display); }
+  .barra .bp small { display: block; font: 400 .78rem/1.3 var(--texto); color: var(--tinta-2); }
+  .barra .btn { flex: 1; min-height: 52px; padding: 12px 16px; font-size: 1.02rem; }
+  @media (min-width: 900px) { .barra { display: none; } footer { padding-bottom: 36px; } }
 
-/* FAQ */
-.faq{max-width:760px;margin:24px auto 0;display:grid;gap:12px}
-.faq details{background:#fff;border-radius:14px;box-shadow:0 2px 0 var(--linha)}
-.faq summary{cursor:pointer;list-style:none;padding:18px 54px 18px 18px;font-family:var(--titulo);font-weight:800;font-size:1.08rem;position:relative;min-height:48px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;
-  background:#EAF3FB;color:var(--azul-esc);display:grid;place-items:center;font-size:1.3rem;font-weight:900}
-.faq details[open] summary::after{content:"–"}
-.faq .resp{padding:0 18px 18px;color:var(--tinta-2)}
-.faq .resp p:last-child{margin:0}
-
-/* CTA final */
-.final{background:var(--amarelo)}
-.final .lead{color:var(--tinta)}
-
-/* Rodapé */
-footer{background:var(--tinta);color:#E6E8EC;padding:36px 0 40px;font-size:.95rem;text-align:center}
-footer p{max-width:640px;margin:0 auto .8em}
-footer .aviso{color:#fff;font-weight:700}
-
-/* Barra fixa (celular) */
-.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;box-shadow:0 -6px 20px rgba(30,36,48,.15);
-  padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s ease}
-.barra.on{transform:none}
-.barra .bp{font-family:var(--titulo);font-weight:900;line-height:1.1;font-size:1.25rem;color:var(--azul-esc);white-space:nowrap}
-.barra .bp small{display:block;font-family:var(--texto);font-weight:700;font-size:.8rem;color:var(--tinta-2)}
-.barra .btn{min-height:52px;font-size:1.05rem;box-shadow:0 4px 0 var(--laranja-esc);padding:10px 16px}
-body.com-barra{padding-bottom:84px}
-
-/* Telas maiores */
-@media (min-width:700px){
-  .numeros{grid-template-columns:repeat(4,1fr)}
-  .dores{grid-template-columns:1fr 1fr}
-  .cards,.publicos{grid-template-columns:1fr 1fr}
-  .etapas{grid-template-columns:repeat(3,1fr)}
-  .etapas li{padding:84px 20px 22px}
-  .entrega{grid-template-columns:1fr 1fr}
-  .galeria button{flex-basis:42%}
-}
-@media (min-width:960px){
-  body{font-size:18px}
-  .sec{padding:80px 0}
-  .hero{padding:56px 0 76px}
-  .hero .wrap{grid-template-columns:1.1fr .9fr;column-gap:40px;align-items:center}
-  .hero .selo,.hero h1,.hero .sub,.hero .cta,.hero .confianca{grid-column:1}
-  .hero-img{grid-column:2;grid-row:1 / span 6;max-width:480px}
-  .hero .cta{margin-left:0}
-  .hero .confianca{justify-content:flex-start}
-  .livro-grid{grid-template-columns:1fr 1fr}
-  .anatomia{grid-template-columns:.9fr 1.1fr}
-  .cards{grid-template-columns:repeat(3,1fr)}
-  .galeria{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible;margin:28px 0 0;padding:0}
-  .galeria button{max-width:none}
-  .dica-deslize{display:none}
-  .garantia{grid-template-columns:auto 1fr;text-align:left;justify-items:start}
-  .barra{display:none}
-  body.com-barra{padding-bottom:0}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{transition:none!important}
-}
+  /* entrada suave (conteúdo visível por padrão) */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .surge { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1); }
+    .js .surge.visto { opacity: 1; transform: none; }
+  }
 </style>
 </head>
 <body>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-4a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h5z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+</svg>
 
-<div class="topbar" role="note"><span>PDF para imprimir</span> · <span>Entrega imediata por e-mail</span> · <span>Garantia de 7 dias</span></div>
+<div class="faixa">Entrega imediata por e-mail · PDF para imprimir · <b>Garantia de 7 dias</b></div>
 
-<!-- ========== HERO ========== -->
 <header class="hero" id="topo">
-  <div class="wrap">
-    <span class="selo">Educação Especial · Pré-escola ao 3º ano do EM</span>
-    <h1>Atividade adaptada <mark>pronta para imprimir</mark>, para qualquer série e matéria.</h1>
-    <p class="sub">São <strong>13.000 atividades</strong> com instrução curta, pictograma, passo a passo e dica de adaptação. Você escolhe a página, imprime e entrega — em 1 minuto, sem começar do zero.</p>
-    <img class="hero-img" src="img/capa-mockup.png" width="1200" height="1200" fetchpriority="high" decoding="async"
-         alt="Mockup do Livro de Atividades Adaptadas, Educação Especial, da Pré-escola ao 3º ano do Ensino Médio, de Carol Pantaleão">
-    <div class="cta">
-      <a class="btn" data-checkout href="#oferta">Quero o livro por R$ 47
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="abas" aria-hidden="true">
+    <i style="background:#F4842B"></i><i style="background:#E63946"></i><i style="background:#D6336C"></i><i style="background:#7B4FB5"></i>
+    <i style="background:#5A55C8"></i><i style="background:#1D70B8"></i><i style="background:#0E8FA8"></i><i style="background:#2A9D8F"></i>
+    <i style="background:#3C9A4E"></i><i style="background:#7A9A1E"></i><i style="background:#B7791F"></i><i style="background:#A0522D"></i><i style="background:#4A5568"></i>
+  </div>
+  <div class="w">
+    <div>
+      <h1>1.000 atividades adaptadas <em>para cada série.</em> Prontas para imprimir.</h1>
+      <p class="lead">Da Pré-escola ao 3º ano do Ensino Médio, em todas as matérias. Cada atividade tem instrução curta, passo a passo e dica de adaptação — e cada tipo de atividade vem com uma aula de exemplo resolvido. Para quem ensina estudantes com deficiência.</p>
+      <a class="btn" data-checkout href="#oferta"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>Quero o livro · R$ 47</a>
+      <div class="garantias">
+        <span><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Acesso imediato</span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Garantia de 7 dias</span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Pix ou cartão</span>
+      </div>
     </div>
-    <ul class="confianca" aria-label="Condições">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#FFC93C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Pix ou até 12x</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#FFC93C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Garantia de 7 dias</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#FFC93C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Acesso imediato</li>
-    </ul>
+    <img class="hero-img" src="img/hero-livro.png" width="1200" height="963" fetchpriority="high" decoding="async"
+         alt="Capa do Livro de Atividades Adaptadas, de Carol Pantaleão, com duas folhas de atividades impressas atrás">
   </div>
 </header>
 
-<main id="conteudo">
-
-<!-- ========== NÚMEROS ========== -->
-<div class="wrap">
-  <div class="numeros" role="list">
-    <div class="num" role="listitem"><b>13.000</b><span>atividades adaptadas</span></div>
-    <div class="num" role="listitem"><b>13 séries</b><span>da Pré-escola ao 3º ano do Ensino Médio</span></div>
-    <div class="num" role="listitem"><b>339 aulas</b><span>“Vamos aprender!” com exemplo resolvido</span></div>
-    <div class="num" role="listitem"><b>8.541</b><span>páginas prontas para imprimir</span></div>
-  </div>
-</div>
-
-<!-- ========== DOR ========== -->
-<section class="sec" id="dor" aria-labelledby="t-dor">
-  <div class="wrap">
-    <h2 id="t-dor">Chegou um aluno incluído. E o material, quem entrega?</h2>
-    <p class="lead">Se você trabalha com inclusão, provavelmente já viveu pelo menos uma destas cenas:</p>
-    <ul class="dores">
-      <li>A turma inteira com o livro didático aberto — e um estudante que não consegue acompanhar nenhuma página dele.</li>
-      <li>Domingo à noite recortando, colando e reescrevendo atividade, porque na segunda ele precisa de algo no nível dele.</li>
-      <li>Na internet, só folhinha solta: infantil demais para o aluno do 8º ano, ou só de alfabetização.</li>
-      <li>Ciências, História, Geografia, Inglês… quase nada adaptado além de Português e Matemática.</li>
-      <li>Cada aluno num nível diferente, cada um numa matéria — e uma só de você para dar conta de tudo.</li>
-      <li>A coordenação pede “atividade adaptada”, mas ninguém diz de onde ela vai sair.</li>
-    </ul>
-    <p class="virada">Não é falta de vontade nem de cuidado. <strong>É falta de material pronto, organizado e no nível certo.</strong> Foi para resolver exatamente isso que este livro foi feito.</p>
-  </div>
-</section>
-
-<!-- ========== O LIVRO ========== -->
-<section class="sec sec--branca" id="livro" aria-labelledby="t-livro">
-  <div class="wrap livro-grid">
-    <div>
-      <span class="selo">O material</span>
-      <h2 id="t-livro">Conheça o Livro de Atividades Adaptadas</h2>
-      <p class="lead">Um livro digital para imprimir, com <strong>1.000 atividades por série</strong>, da Pré-escola ao 3º ano do Ensino Médio — em todas as matérias, com uma aula explicada antes de cada tipo de atividade e gabarito no final.</p>
-      <p>Você recebe o livro completo num arquivo só e também <strong>13 volumes separados</strong>, um para cada série. Abriu, escolheu, imprimiu.</p>
-    </div>
-    <figure style="margin:0">
-      <img class="series-img" src="img/series.png" width="1200" height="900" loading="lazy" decoding="async"
-           alt="Grade com as 13 capas dos volumes por série: Pré-escola, 1º ao 9º ano do Ensino Fundamental e 1º ao 3º ano do Ensino Médio">
-      <figcaption>13 volumes, um por série — imprima só o que você precisa.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ========== COMO É CADA ATIVIDADE ========== -->
-<section class="sec" id="atividade" aria-labelledby="t-ativ">
-  <div class="wrap">
-    <h2 id="t-ativ" class="centro">Cada atividade já chega adaptada</h2>
-    <p class="lead centro">Todas as páginas seguem o mesmo jeito de organizar. O estudante reconhece a rotina; você não perde tempo explicando de novo.</p>
-    <div class="anatomia" style="margin-top:28px">
-      <figure class="pagina-destaque" style="margin:0 auto">
-        <img src="img/paginas-01.png" width="1080" height="1350" loading="lazy" decoding="async"
-             alt="Página real do livro com duas atividades adaptadas: instrução curta com pictograma, faixa Como fazer, bolinhas de autonomia e dica para o professor">
-      </figure>
-      <div>
-        <ol class="passos-lista">
-          <li><b>Uma instrução por vez, curta e com pictograma</b><br>O desenho mostra a ação: pintar, ligar, circular, escrever, calcular, ler.</li>
-          <li><b>Faixa “Como fazer”</b><br>Os passos da atividade, para o aluno se orientar com mais autonomia.</li>
-          <li><b>Bolinhas de autonomia</b><br>Indicam quanta mediação a atividade costuma pedir: 1 bolinha, mais apoio; 3 bolinhas, mais autonomia.</li>
-          <li><b>Dica de adaptação para o professor</b><br>No rodapé de toda atividade, uma sugestão prática para ajustar ao seu aluno.</li>
-          <li><b>Duas atividades por folha A4</b><br>Recorte na linha pontilhada e entregue uma de cada vez, sem sobrecarregar.</li>
-        </ol>
-        <div class="aula-box">
-          <h3>E antes de cada tipo de atividade: “Vamos aprender!”</h3>
-          <p style="margin:0">São 339 aulas com explicação, <strong>exemplo resolvido</strong> (respostas em vermelho), passo a passo e lembrete. Você apresenta a aula, resolve o exemplo junto, e o aluno parte para as atividades sabendo o caminho.</p>
+<section class="sec series" aria-labelledby="t-series">
+  <div class="w">
+    <h2 id="t-series">Escolha a série e veja uma página de verdade.</h2>
+    <p class="lead">São 13 volumes, um por série. Toque numa série: a página que aparece é exatamente como sai na sua impressora.</p>
+    <div class="tabs" role="tablist" aria-label="Séries" id="tabs"></div>
+    <div class="painel" id="painel" role="tabpanel" aria-live="polite">
+      <div class="folha" id="folha"><img id="folha-img" src="img/serie-04.jpg" width="900" height="1273" alt="Página de atividade do 3º ano"></div>
+      <div class="info">
+        <h3 id="s-nome">3º ano</h3>
+        <p class="faixa-etaria" id="s-faixa">8 anos • Ensino Fundamental – Anos Iniciais</p>
+        <div class="numeros">
+          <div><b>1.000</b>atividades</div>
+          <div><b id="s-aulas">97</b>aulas com exemplo</div>
+          <div><b id="s-pags">685</b>páginas</div>
         </div>
+        <p class="rotulo">Matérias deste volume</p>
+        <ul class="chips" id="s-materias"></ul>
+        <a class="btn" data-checkout href="#oferta"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>Levar as 13 séries · R$ 47</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== GALERIA ========== -->
-<section class="sec sec--branca" id="paginas" aria-labelledby="t-gal">
-  <div class="wrap">
-    <h2 id="t-gal" class="centro">Veja páginas reais do livro</h2>
-    <p class="lead centro">Nada de imagem ilustrativa: estas são páginas de dentro do material. Toque para ampliar.</p>
-    <div class="galeria" id="galeria">
-      <button type="button" aria-label="Ampliar página 1"><img src="img/paginas-01.png" width="1080" height="1350" loading="lazy" decoding="async" alt="Página real do livro de atividades adaptadas, exemplo 1 de 8"></button>
-      <button type="button" aria-label="Ampliar página 2"><img src="img/paginas-02.png" width="1080" height="1350" loading="lazy" decoding="async" alt="Página real do livro de atividades adaptadas, exemplo 2 de 8"></button>
-      <button type="button" aria-label="Ampliar página 3"><img src="img/paginas-03.png" width="1080" height="1350" loading="lazy" decoding="async" alt="Página real do livro de atividades adaptadas, exemplo 3 de 8"></button>
-      <button type="button" aria-label="Ampliar página 4"><img src="img/paginas-04.png" width="1080" height="1350" loading="lazy" decoding="async" alt="Página real do livro de atividades adaptadas, exemplo 4 de 8"></button>
-      <button type="button" aria-label="Ampliar página 5"><img src="img/paginas-05.png" width="1080" height="1350" loading="lazy" decoding="async" alt="Página real do livro de atividades adaptadas, exemplo 5 de 8"></button>
-      <button type="button" aria-label="Ampliar página 6"><img src="img/paginas-06.png" width="1080" height="1350" loading="lazy" decoding="async" alt="Página real do livro de atividades adaptadas, exemplo 6 de 8"></button>
-      <button type="button" aria-label="Ampliar página 7"><img src="img/paginas-07.png" width="1080" height="1350" loading="lazy" decoding="async" alt="Página real do livro de atividades adaptadas, exemplo 7 de 8"></button>
-      <button type="button" aria-label="Ampliar página 8"><img src="img/paginas-08.png" width="1080" height="1350" loading="lazy" decoding="async" alt="Página real do livro de atividades adaptadas, exemplo 8 de 8"></button>
+<section class="sec dor" aria-labelledby="t-dor">
+  <div class="w">
+    <h2 id="t-dor">Chegou um aluno incluído. E o material, quem entrega?</h2>
+    <div class="cenas">
+      <div class="cena surge"><span>1</span><p>A turma abre o livro didático e um estudante não consegue acompanhar nenhuma página.</p></div>
+      <div class="cena surge"><span>2</span><p>Domingo à noite, recortando, colando e redesenhando atividade — para uma semana só.</p></div>
+      <div class="cena surge"><span>3</span><p>O material que você acha pronto é infantil demais para um adolescente, ou difícil demais para quem ainda precisa de apoio.</p></div>
     </div>
-    <p class="dica-deslize" aria-hidden="true">Deslize para o lado para ver mais páginas →</p>
-    <div class="cta">
-      <a class="btn" data-checkout href="#oferta">Quero todas as 13.000 atividades</a>
+    <p class="virada surge">Aqui a adaptação já vem feita: <b>você escolhe o nível do aluno, imprime e entrega.</b></p>
+  </div>
+</section>
+
+<section class="sec anatomia" aria-labelledby="t-anat">
+  <div class="w">
+    <div class="pagina-real surge">
+      <img src="img/anatomia.jpg" width="1000" height="1415" loading="lazy" decoding="async" alt="Página real de atividades do 1º ano com as partes numeradas">
+      <span class="pino" style="left:5.2%;top:10.7%" aria-hidden="true">1</span>
+      <span class="pino" style="left:5.2%;top:14.2%" aria-hidden="true">2</span>
+      <span class="pino" style="left:5.2%;top:17.9%" aria-hidden="true">3</span>
+      <span class="pino" style="left:8.2%;top:49.5%" aria-hidden="true">4</span>
+      <span class="pino" style="left:49.4%;top:5.8%" aria-hidden="true">5</span>
+    </div>
+    <div>
+      <h2 id="t-anat">Uma página pensada para quem precisa de apoio.</h2>
+      <p class="lead" style="margin-top:14px">Letra grande, um comando por vez e espaço para responder. Cada folha tem duas atividades — dá para recortar e entregar uma de cada vez.</p>
+      <ol class="partes">
+        <li><div><b>Número, nome e matéria</b><p>Cada atividade é única e numerada de 0001 a 1000, com a matéria e as bolinhas de autonomia (muito apoio, apoio parcial ou mais autonomia).</p></div></li>
+        <li><div><b>Instrução curta com pictograma</b><p>Uma ordem direta, com ícone de ação. Nos anos iniciais quem fala é a mascote Corujinha; do 6º ano em diante, um ícone — para não infantilizar.</p></div></li>
+        <li><div><b>Faixa "Como fazer"</b><p>Os passos da aula repetidos para o aluno, em sequência visual.</p></div></li>
+        <li><div><b>Dica para o professor</b><p>Uma sugestão de adaptação para TEA, TDAH, deficiência intelectual, baixa visão e outras necessidades.</p></div></li>
+        <li><div><b>Nome e data</b><p>Para registrar e montar o portfólio do aluno.</p></div></li>
+      </ol>
     </div>
   </div>
 </section>
 
-<dialog class="zoom" id="zoom" aria-label="Página ampliada">
-  <button class="fechar" type="button" aria-label="Fechar">×</button>
-  <img id="zoom-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
-</dialog>
-
-<!-- ========== O QUE TEM DENTRO ========== -->
-<section class="sec" id="dentro" aria-labelledby="t-dentro">
-  <div class="wrap">
-    <h2 id="t-dentro" class="centro">O que tem dentro</h2>
-    <p class="lead centro">Um material só para acompanhar o estudante do começo ao fim da vida escolar.</p>
-    <div class="cards">
-      <div class="card">
-        <h3>13 séries, 1.000 atividades cada</h3>
-        <ul class="chips">
-          <li>Pré-escola</li><li>1º ao 5º ano</li><li>6º ao 9º ano</li><li>1º ao 3º ano do EM</li>
-        </ul>
-        <p style="margin-top:12px">Atividades numeradas de 0001 a 1000 em cada série, com índice e marcadores no PDF.</p>
-      </div>
-      <div class="card">
-        <h3>Todas as matérias</h3>
-        <ul class="chips chips--lar">
-          <li>Português</li><li>Matemática</li><li>Ciências</li><li>História</li><li>Geografia</li><li>Arte</li>
-          <li>Educação Física</li><li>Inglês</li><li>Ensino Religioso (não confessional)</li>
-        </ul>
-        <p style="margin-top:12px">No Ensino Médio, também: Literatura, Biologia, Física, Química, Filosofia e Sociologia. Na Pré-escola, os campos de experiência.</p>
-      </div>
-      <div class="card">
-        <h3>Habilidades para a vida</h3>
-        <ul class="chips chips--ver">
-          <li>Vida diária</li><li>Educação financeira</li><li>Socioemocional</li><li>Raciocínio lógico</li>
-        </ul>
-        <p style="margin-top:12px">Para trabalhar autonomia e situações do dia a dia, além do conteúdo da série.</p>
-      </div>
-      <div class="card">
-        <h3>339 aulas “Vamos aprender!”</h3>
-        <p>Explicação, exemplo resolvido com as respostas em vermelho, passo a passo e lembrete antes de cada tipo de atividade.</p>
-      </div>
-      <div class="card">
-        <h3>Gabarito em todas as séries</h3>
-        <p>No final de cada série, para conferir rápido — ou para a família acompanhar em casa.</p>
-      </div>
-      <div class="card">
-        <h3>Guia, PEI e fichas</h3>
-        <ul class="check">
-          <li>Guia de adaptações com estratégias para TEA, TDAH, deficiência intelectual, síndrome de Down, baixa visão, surdez, deficiência física, dislexia, discalculia e altas habilidades</li>
-          <li>Princípios e níveis de apoio</li>
-          <li>Modelo de PEI (Plano Educacional Individualizado)</li>
-          <li>Ficha de acompanhamento, rotina visual e autoavaliação</li>
-        </ul>
-      </div>
+<section class="sec aula" aria-labelledby="t-aula">
+  <div class="w">
+    <div class="pilha surge">
+      <img src="img/aula-07.jpg" width="900" height="1273" loading="lazy" decoding="async" alt="Aula Vamos aprender! do 6º ano">
+      <img src="img/aula-02.jpg" width="900" height="1273" loading="lazy" decoding="async" alt="Aula Vamos aprender! do 1º ano com exemplo resolvido">
     </div>
-    <div class="destaque">
-      <h3>Escolha pelo aluno, não pela série</h3>
-      <p>Seu estudante está no 7º ano, mas ainda está se alfabetizando? Ou está no 3º ano e já vai além? Como você tem <strong>todas as séries</strong>, pode usar as atividades do nível em que ele está hoje e avançar quando ele mostrar segurança.</p>
+    <div class="texto">
+      <h2 id="t-aula">Antes de cada tipo de atividade, uma aula.</h2>
+      <p class="lead" style="margin-top:14px">São 339 páginas "Vamos aprender!". O aluno vê o jeito de fazer antes de tentar sozinho.</p>
+      <div class="passos">
+        <div><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><p><b>O que vamos aprender e explicação</b> em frases curtas.</p></div>
+        <div><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><p><b>Exemplo resolvido</b> com a resposta marcada em vermelho, como se a professora tivesse feito.</p></div>
+        <div><svg class="ic" aria-hidden="true"><use href="#i-print"/></svg><p><b>Passo a passo e "Lembre-se"</b>, mais uma orientação para você.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ========== PARA QUEM É ========== -->
-<section class="sec sec--branca" id="para-quem" aria-labelledby="t-quem">
-  <div class="wrap">
-    <h2 id="t-quem" class="centro">Para quem é este livro</h2>
-    <div class="publicos">
-      <div class="publico" style="--c:#EAF3FB">
-        <h3>Professora de AEE e sala de recursos</h3>
-        <p>Atendimentos com estudantes de idades e séries diferentes no mesmo dia? Aqui tem material de todas as séries, organizado e pronto para imprimir.</p>
-      </div>
-      <div class="publico" style="--c:#FEEBDD">
-        <h3>Professora de sala regular com aluno incluído</h3>
-        <p>Enquanto a turma faz a atividade do livro didático, o estudante trabalha a mesma matéria, no nível dele — sem você precisar montar tudo do zero.</p>
-      </div>
-      <div class="publico" style="--c:#E1F3F0">
-        <h3>Mediadoras, auxiliares de inclusão, ATs e psicopedagogas</h3>
-        <p>Atividade pronta para cada dia, com passo a passo para o aluno e dica de mediação para você.</p>
-      </div>
-      <div class="publico" style="--c:#FFF1C9">
-        <h3>Famílias atípicas</h3>
-        <p>Para mães e pais que acompanham o estudo em casa: atividades no nível certo, com exemplo resolvido e gabarito para conferir junto.</p>
-      </div>
-    </div>
-    <p class="nao-e"><strong>Não é para você se</strong> procura um curso, uma terapia ou uma avaliação. Este é um material pedagógico para imprimir e usar com o estudante — ele apoia o seu trabalho, não substitui o acompanhamento de profissionais.</p>
-    <div class="cta">
-      <a class="btn" data-checkout href="#oferta">Quero o livro por R$ 47</a>
+<section class="sec quem" aria-labelledby="t-quem">
+  <div class="w">
+    <h2 id="t-quem">Feito para quem está do lado do aluno.</h2>
+    <div class="perfis">
+      <div class="perfil surge"><h3>Professora de AEE e sala de recursos</h3><p>Um banco com 13.000 atividades organizadas por série e matéria, com gabarito, modelo de PEI e ficha de acompanhamento.</p></div>
+      <div class="perfil surge"><h3>Professora de sala regular com aluno incluído</h3><p>A mesma matéria da turma, no nível que o estudante consegue fazer — sem você precisar adaptar nada.</p></div>
+      <div class="perfil surge"><h3>Mediadora, auxiliar e psicopedagoga</h3><p>Atividade pronta para o dia, com o nível de apoio indicado e uma dica de como conduzir.</p></div>
+      <div class="perfil surge"><h3>Família</h3><p>Para reforçar em casa, no ritmo do seu filho, com explicação e exemplo antes de cada tarefa.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ========== COMO FUNCIONA ========== -->
-<section class="sec" id="como-funciona" aria-labelledby="t-como">
-  <div class="wrap">
-    <h2 id="t-como" class="centro">Como funciona</h2>
-    <ol class="etapas">
-      <li><h3>Faça o pedido</h3><p>Pague no Pix ou no cartão, em até 12x, no ambiente seguro da Kiwify.</p></li>
-      <li><h3>Receba no e-mail</h3><p>Assim que o pagamento é confirmado, o acesso chega no e-mail que você cadastrou. No Pix, em poucos minutos.</p></li>
-      <li><h3>Imprima e use</h3><p>Abra o volume da série, escolha a atividade e imprima em A4. Quantas vezes precisar.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ========== O QUE VOCÊ RECEBE ========== -->
-<section class="sec sec--azul" id="recebe" aria-labelledby="t-recebe">
-  <div class="wrap">
-    <h2 id="t-recebe" class="centro">Tudo o que você recebe</h2>
-    <ul class="entrega">
-      <li><span class="ico" style="--c:#D6E8F7"><svg viewBox="0 0 24 24" fill="none" stroke="#14528A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2.5zM8 7h7"/></svg></span>
-        <div><b>Livro completo em PDF</b><span>As 13 séries num arquivo só (8.541 páginas), com marcadores para navegar.</span></div></li>
-      <li><span class="ico" style="--c:#FEEBDD"><svg viewBox="0 0 24 24" fill="none" stroke="#8A3D07" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="16" rx="1"/><path d="M17 5l3.5 14.5"/></svg></span>
-        <div><b>13 volumes separados por série</b><span>Cada um com capa, guia e modelos. Arquivo mais leve: imprima só o da série do aluno.</span></div></li>
-      <li><span class="ico" style="--c:#E1F3F0"><svg viewBox="0 0 24 24" fill="none" stroke="#175E55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span>
-        <div><b>339 aulas “Vamos aprender!”</b><span>Com exemplo resolvido antes de cada tipo de atividade.</span></div></li>
-      <li><span class="ico" style="--c:#FFF1C9"><svg viewBox="0 0 24 24" fill="none" stroke="#7A5A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span>
-        <div><b>Gabarito de todas as séries</b><span>Para corrigir em segundos.</span></div></li>
-      <li><span class="ico" style="--c:#FDE3E5"><svg viewBox="0 0 24 24" fill="none" stroke="#C1121F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span>
-        <div><b>Guia de adaptações</b><span>Estratégias práticas para 10 necessidades, do TEA às altas habilidades.</span></div></li>
-      <li><span class="ico" style="--c:#D6E8F7"><svg viewBox="0 0 24 24" fill="none" stroke="#14528A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
-        <div><b>Modelos prontos</b><span>PEI, ficha de acompanhamento, rotina visual e autoavaliação.</span></div></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ========== AUTORIA ========== -->
-<section class="sec sec--branca" id="autoria" aria-labelledby="t-autoria">
-  <div class="wrap">
-    <div class="autoria">
-      <h2 id="t-autoria" style="font-size:clamp(1.4rem,5vw,1.9rem)">Sobre o material</h2>
-      <p class="nome">Autoria: Carol Pantaleão</p>
-      <p>A proposta deste livro é tirar das costas de quem ensina a parte mais demorada da inclusão: transformar o conteúdo da série em atividade acessível, todos os dias, para estudantes muito diferentes entre si.</p>
-      <p>Por isso, cada página segue o mesmo caminho — instrução curta, pictograma, passo a passo, nível de autonomia e uma dica de adaptação. O estudante reconhece a rotina e ganha segurança; a professora ganha tempo para o que só ela pode fazer: olhar para o aluno.</p>
-      <p style="margin:0">As atividades e ilustrações são originais, e o conteúdo acompanha o currículo de cada etapa, com linguagem simplificada e apoio visual para quem precisa de mais suporte.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ========== OFERTA ========== -->
 <section class="sec oferta" id="oferta" aria-labelledby="t-oferta">
-  <div class="wrap">
-    <h2 id="t-oferta" class="centro">Leve o livro completo hoje</h2>
-    <div class="caixa">
-      <img class="mini" src="img/capa-mockup.png" width="1200" height="1200" loading="lazy" decoding="async" alt="Livro de Atividades Adaptadas">
-      <h3>Livro de Atividades Adaptadas — Pré-escola ao 3º ano do Ensino Médio</h3>
-      <ul class="check">
-        <li>13.000 atividades em todas as matérias</li>
-        <li>Livro completo + 13 volumes por série</li>
-        <li>339 aulas com exemplo resolvido e gabarito</li>
-        <li>Guia de adaptações, modelo de PEI e fichas</li>
-        <li>Imprima quantas vezes precisar</li>
+  <div class="w">
+    <div>
+      <h2 id="t-oferta">Tudo o que você recebe</h2>
+      <ul class="itens">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Livro completo</b> — 8.541 páginas, 13.000 atividades, índice clicável</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>13 volumes separados</b>, um por série, para imprimir só o que precisa</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>339 aulas</b> com exemplo resolvido</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Gabarito</b> de cada série</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Guia de adaptações</b>: TEA, TDAH, deficiência intelectual, síndrome de Down, baixa visão, surdez, deficiência física, dislexia, discalculia e altas habilidades</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span><b>Modelo de PEI</b>, ficha de acompanhamento, rotina visual e autoavaliação</span></li>
       </ul>
-      <p class="preco-de">de <s>R$ 197</s> por apenas</p>
-      <p class="preco"><small>R$</small>47</p>
-      <p class="parcelas">à vista no Pix ou em até 12x no cartão</p>
-      <a class="btn" data-checkout href="#oferta">Quero meu livro agora
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <p class="pagamento">Pagamento seguro pela Kiwify · Acesso imediato por e-mail · Garantia de 7 dias</p>
-      <p class="bump-nota"><strong>Vai usar com toda a equipe da escola?</strong> Na tela de pagamento você pode incluir a <strong>Licença Escola</strong> (opcional), para uso por todos os profissionais da mesma escola.</p>
     </div>
-  </div>
-</section>
-
-<!-- ========== GARANTIA ========== -->
-<section class="sec sec--branca" id="garantia" aria-labelledby="t-garantia">
-  <div class="wrap">
-    <div class="garantia">
-      <div class="selo-g" aria-hidden="true"><div><b>7</b><span>dias de<br>garantia</span></div></div>
-      <div>
-        <h2 id="t-garantia">Garantia incondicional de 7 dias</h2>
-        <p>Baixe, abra, imprima, use com seus alunos. Se por qualquer motivo você achar que o material não é para você, peça o reembolso em até 7 dias após a compra e receba <strong>100% do valor de volta</strong>. Sem perguntas e sem burocracia.</p>
-        <p style="margin:0">O risco fica todo com a gente.</p>
+    <div class="caixa">
+      <img src="img/pacote.png" width="1200" height="676" loading="lazy" decoding="async" alt="Livro completo e os 13 volumes por série">
+      <div class="preco">
+        <div class="valor"><small>R$</small>47</div>
+        <p>Pagamento único · acesso para sempre</p>
       </div>
+      <a class="btn" data-checkout href="#oferta"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>Quero o livro agora</a>
+      <div class="garantias">
+        <span><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Chega no seu e-mail</span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>7 dias de garantia</span>
+      </div>
+      <p class="pagamento"><svg class="ic" aria-hidden="true" style="width:16px;height:16px"><use href="#i-lock"/></svg>Pagamento seguro pela Kiwify · Pix ou cartão em até 12x</p>
     </div>
   </div>
 </section>
 
-<!-- ========== FAQ ========== -->
-<section class="sec" id="faq" aria-labelledby="t-faq">
-  <div class="wrap">
-    <h2 id="t-faq" class="centro">Perguntas frequentes</h2>
-    <div class="faq">
-      <details>
-        <summary>Em que formato é o material? É um livro físico?</summary>
-        <div class="resp"><p>É digital, em PDF, para imprimir em folha A4 — nada é enviado pelo correio. Você recebe o livro completo (as 13 séries num arquivo de cerca de 66 MB) e os 13 volumes separados por série, que são mais leves. Abre no celular, tablet ou computador.</p></div>
-      </details>
-      <details>
-        <summary>Como eu recebo?</summary>
-        <div class="resp"><p>Assim que o pagamento é confirmado, você recebe no e-mail cadastrado o acesso para baixar os arquivos pela Kiwify. No Pix a confirmação costuma levar poucos minutos; no cartão, geralmente é na hora. Se não encontrar o e-mail, confira as pastas de spam e promoções.</p></div>
-      </details>
-      <details>
-        <summary>Posso imprimir quantas vezes quiser?</summary>
-        <div class="resp"><p>Sim. Você pode imprimir e fotocopiar as páginas quantas vezes precisar para usar com os seus próprios alunos. Só não é permitido revender, compartilhar o arquivo ou publicar o conteúdo.</p></div>
-      </details>
-      <details>
-        <summary>Serve para qual deficiência?</summary>
-        <div class="resp"><p>O livro foi pensado para estudantes que precisam de mais apoio para aprender — com deficiência, transtornos do neurodesenvolvimento ou dificuldades de aprendizagem. O guia de adaptações traz estratégias para TEA, TDAH, deficiência intelectual, síndrome de Down, baixa visão, surdez, deficiência física, dislexia, discalculia e altas habilidades.</p>
-        <p>Quem escolhe a atividade é você, que conhece o estudante: as bolinhas de autonomia e a dica de adaptação ajudam a ajustar o nível. Para baixa visão, dá para imprimir ampliado em A3.</p></div>
-      </details>
-      <details>
-        <summary>Meu aluno está numa série, mas aprende no nível de outra. Serve?</summary>
-        <div class="resp"><p>Serve — e esse é um dos motivos de o livro ter todas as séries. Use as atividades do nível em que o estudante está hoje (anterior ou posterior à série dele) e avance quando ele mostrar segurança. O modelo de PEI ajuda a definir o ponto de partida.</p></div>
-      </details>
-      <details>
-        <summary>Serve para homeschool ou para usar em casa?</summary>
-        <div class="resp"><p>Sim. A linguagem é simples, cada tipo de atividade tem uma aula com exemplo resolvido e o gabarito fica no final da série — o que facilita para a família acompanhar. O ideal é conversar com a escola e a equipe que acompanha o estudante para alinhar o que trabalhar.</p></div>
-      </details>
-      <details>
-        <summary>Posso usar na escola toda?</summary>
-        <div class="resp"><p>A compra individual é para uso com os seus alunos. Se a ideia é usar com toda a equipe pedagógica da mesma escola (AEE, sala regular, mediadoras), na tela de pagamento há a opção <strong>Licença Escola</strong> — é opcional e é só marcar antes de finalizar.</p></div>
-      </details>
-      <details>
-        <summary>É alinhado à BNCC?</summary>
-        <div class="resp"><p>O conteúdo de cada série acompanha o currículo brasileiro da etapa, com base na BNCC (campos de experiência na Pré-escola e componentes curriculares no Ensino Fundamental e Médio), apresentado de forma adaptada e simplificada. Os códigos das habilidades não aparecem impressos nas atividades, para deixar a página limpa para o aluno.</p></div>
-      </details>
-      <details>
-        <summary>E se eu não gostar?</summary>
-        <div class="resp"><p>Você tem 7 dias de garantia incondicional. Se achar que não é para você, peça o reembolso dentro desse prazo e recebe todo o valor de volta.</p></div>
-      </details>
-      <details>
-        <summary>O livro substitui terapia ou acompanhamento especializado?</summary>
-        <div class="resp"><p>Não. É um material pedagógico de apoio ao trabalho da escola e da família. Ele não substitui avaliação nem acompanhamento de profissionais da saúde.</p></div>
-      </details>
+<section class="sec garantia" aria-labelledby="t-gar">
+  <div class="w">
+    <svg class="selo" viewBox="0 0 168 168" role="img" aria-label="Selo de garantia de 7 dias">
+      <circle cx="84" cy="84" r="80" fill="#087A3C"/>
+      <circle cx="84" cy="84" r="66" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 6"/>
+      <text x="84" y="92" text-anchor="middle" fill="#fff" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="58">7</text>
+      <text x="84" y="118" text-anchor="middle" fill="#fff" font-family="Atkinson Hyperlegible, sans-serif" font-weight="700" font-size="15" letter-spacing="2">DIAS</text>
+      <text x="84" y="52" text-anchor="middle" fill="#fff" font-family="Atkinson Hyperlegible, sans-serif" font-weight="700" font-size="12" letter-spacing="2">GARANTIA</text>
+    </svg>
+    <div>
+      <h2 id="t-gar">Abra, folheie, imprima. Se não servir, devolvemos tudo.</h2>
+      <p>Você tem 7 dias para conhecer o livro. Se achar que não é para você, peça o reembolso pela própria Kiwify e recebe 100% do valor, sem perguntas.</p>
     </div>
   </div>
 </section>
 
-<!-- ========== CTA FINAL ========== -->
-<section class="sec final centro" aria-labelledby="t-final">
-  <div class="wrap">
-    <h2 id="t-final">Na próxima aula, o material dele já pode estar impresso.</h2>
-    <p class="lead">13.000 atividades adaptadas, todas as séries e matérias, guia de adaptações e modelos prontos — por R$ 47, no Pix ou em até 12x.</p>
-    <div class="cta">
-      <a class="btn" data-checkout href="#oferta" style="background:var(--azul);color:#fff;box-shadow:0 6px 0 var(--azul-esc)">Quero o livro por R$ 47</a>
-      <small style="color:var(--tinta)">Garantia incondicional de 7 dias · Acesso imediato</small>
-    </div>
+<section class="sec autoria" aria-labelledby="t-aut">
+  <div class="w">
+    <p>Autoria</p>
+    <h2 id="t-aut" class="nome">Carol Pantaleão</h2>
+    <p>O livro responde a uma pergunta simples: o que a professora precisa ter na mão, amanhã cedo, para o aluno com deficiência participar da aula? São 13.000 atividades com linguagem clara, apoio visual e progressão de autonomia, organizadas pela BNCC, da Pré-escola ao Ensino Médio.</p>
   </div>
 </section>
 
-</main>
+<section class="sec faq" aria-labelledby="t-faq">
+  <div class="w">
+    <h2 id="t-faq">Perguntas frequentes</h2>
+    <details><summary>Como recebo o livro?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros da Kiwify, onde baixa o livro completo e os 13 volumes. No Pix a confirmação é na hora.</p></details>
+    <details><summary>É livro impresso?</summary><p>Não. É um PDF para você imprimir em casa ou na escola, quantas vezes precisar, com os seus alunos.</p></details>
+    <details><summary>Serve para qual deficiência?</summary><p>As atividades foram feitas para estudantes que precisam de apoio na aprendizagem: TEA, TDAH, deficiência intelectual, síndrome de Down, dificuldades de aprendizagem e outras. Cada atividade traz uma dica de adaptação, e o guia explica estratégias para cada necessidade.</p></details>
+    <details><summary>Meu aluno está no 6º ano, mas aprende no nível do 2º. Serve?</summary><p>Sim. Você escolhe a página pelo nível do aluno, não pela idade. Os volumes dos anos finais e do Ensino Médio usam temas e visual adequados a adolescentes.</p></details>
+    <details><summary>Tem todas as matérias?</summary><p>Sim: Língua Portuguesa, Matemática, Ciências, História, Geografia, Arte, Educação Física, Inglês e Ensino Religioso não confessional; no Ensino Médio também Literatura, Biologia, Física, Química, Filosofia e Sociologia; na Pré-escola, os campos de experiência. Além de vida diária, educação financeira, socioemocional e raciocínio lógico.</p></details>
+    <details><summary>Está de acordo com a BNCC?</summary><p>As atividades foram organizadas a partir das habilidades da BNCC de cada etapa, adaptadas para estudantes que precisam de apoio.</p></details>
+    <details><summary>Posso usar com a equipe toda da escola?</summary><p>A compra dá direito ao uso com os seus próprios alunos. Para usar com a equipe inteira de uma escola, responda ao e-mail da compra e combinamos uma licença.</p></details>
+    <details><summary>Funciona no celular?</summary><p>Você pode abrir e escolher as páginas no celular, mas o material foi feito para imprimir em A4.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Peça o reembolso pela Kiwify e recebe o valor integral.</p></details>
+  </div>
+</section>
+
+<section class="sec final" aria-labelledby="t-final">
+  <div class="w">
+    <h2 id="t-final">Amanhã cedo, a atividade do seu aluno já está pronta.</h2>
+    <p>13 séries, todas as matérias, 13.000 atividades adaptadas. Um pagamento de R$ 47 e acesso imediato.</p>
+    <a class="btn" data-checkout href="#oferta"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>Quero o livro completo · R$ 47</a>
+    <div class="garantias"><span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Garantia de 7 dias</span><span><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Entrega imediata</span></div>
+  </div>
+</section>
 
 <footer>
-  <div class="wrap">
-    <p><strong>Livro de Atividades Adaptadas</strong> — Educação Especial, da Pré-escola ao 3º ano do Ensino Médio.</p>
+  <div class="w">
+    <p><b>Livro de Atividades Adaptadas</b> — Educação Especial, da Pré-escola ao 3º ano do Ensino Médio.</p>
     <p>© 2026 Carol Pantaleão. Todos os direitos reservados.</p>
-    <p class="aviso">Este material é pedagógico e não substitui avaliação ou acompanhamento de profissionais da saúde.</p>
-    <p>Este site não é afiliado ao Facebook, Instagram ou à Meta Platforms, Inc.</p>
-    <p><a href="privacidade.html">Política de Privacidade</a></p>
+    <p>Este material é pedagógico e não substitui avaliação ou acompanhamento de profissionais da saúde.</p>
+    <p>Este site não é afiliado ao Facebook, Instagram ou à Meta Platforms, Inc. · <a href="privacidade.html">Política de Privacidade</a></p>
   </div>
 </footer>
 
-<!-- Barra fixa de compra (só no celular) -->
 <div class="barra" id="barra" aria-hidden="true">
-  <div class="bp">R$ 47<small>Pix ou até 12x</small></div>
+  <div class="bp">R$ 47<small>Pix ou cartão</small></div>
   <a class="btn" data-checkout href="#oferta" tabindex="-1">Quero o livro</a>
 </div>
 
 <script>
+document.documentElement.classList.add('js');
 (function () {
-  // ---- Link do checkout + UTMs da página ----
-  var PASSA = /^(utm_[a-z_]+|src|sck|xcod|fbclid)$/i;
-  function linkCheckout() {
-    if (!/^https?:\/\//i.test(CHECKOUT_URL)) return null;
-    try {
-      var u = new URL(CHECKOUT_URL);
-      new URLSearchParams(location.search).forEach(function (v, k) {
-        if (PASSA.test(k) && !u.searchParams.has(k)) u.searchParams.set(k, v);
-      });
-      return u.toString();
-    } catch (e) { return null; }
-  }
-  var destino = linkCheckout();
-  if (!destino) console.warn('CHECKOUT_URL ainda não foi preenchido — os botões levam para a seção #oferta.');
+  var SERIES = [{"nome":"Pré-escola","faixa":"4 a 5 anos • Educação Infantil","cor":"#F4842B","img":"serie-01.jpg","paginas":584,"aulas":35,"materias":["Língua Portuguesa","Matemática","Ciências","Arte","Sons e Música","Corpo e Movimento","Natureza e Sociedade","Eu, o Outro e o Nós","Coordenação Motora","Raciocínio Lógico","Socioemocional"]},{"nome":"1º ano","faixa":"6 anos • Ensino Fundamental – Anos Iniciais","cor":"#E63946","img":"serie-02.jpg","paginas":646,"aulas":68,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira"]},{"nome":"2º ano","faixa":"7 anos • Ensino Fundamental – Anos Iniciais","cor":"#D6336C","img":"serie-03.jpg","paginas":678,"aulas":95,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira"]},{"nome":"3º ano","faixa":"8 anos • Ensino Fundamental – Anos Iniciais","cor":"#7B4FB5","img":"serie-04.jpg","paginas":685,"aulas":97,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira"]},{"nome":"4º ano","faixa":"9 anos • Ensino Fundamental – Anos Iniciais","cor":"#5A55C8","img":"serie-05.jpg","paginas":673,"aulas":84,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira"]},{"nome":"5º ano","faixa":"10 anos • Ensino Fundamental – Anos Iniciais","cor":"#1D70B8","img":"serie-06.jpg","paginas":665,"aulas":73,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira"]},{"nome":"6º ano","faixa":"11 anos • Ensino Fundamental – Anos Finais","cor":"#0E8FA8","img":"serie-07.jpg","paginas":676,"aulas":72,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira","Cidadania"]},{"nome":"7º ano","faixa":"12 anos • Ensino Fundamental – Anos Finais","cor":"#2A9D8F","img":"serie-08.jpg","paginas":680,"aulas":78,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira","Cidadania"]},{"nome":"8º ano","faixa":"13 anos • Ensino Fundamental – Anos Finais","cor":"#3C9A4E","img":"serie-09.jpg","paginas":684,"aulas":76,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira","Cidadania"]},{"nome":"9º ano","faixa":"14 anos • Ensino Fundamental – Anos Finais","cor":"#7A9A1E","img":"serie-10.jpg","paginas":679,"aulas":71,"materias":["Língua Portuguesa","Matemática","Ciências","História","Geografia","Ensino Religioso","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira","Cidadania"]},{"nome":"1ª série EM","faixa":"15 anos • Ensino Médio (1º colegial)","cor":"#B7791F","img":"serie-11.jpg","paginas":682,"aulas":102,"materias":["Língua Portuguesa","Literatura","Matemática","Biologia","Física","Química","História","Geografia","Filosofia","Sociologia","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira","Cidadania","Mundo do Trabalho","Projeto de Vida","Segurança"]},{"nome":"2ª série EM","faixa":"16 anos • Ensino Médio (2º colegial)","cor":"#A0522D","img":"serie-12.jpg","paginas":687,"aulas":102,"materias":["Língua Portuguesa","Literatura","Matemática","Biologia","Física","Química","História","Geografia","Filosofia","Sociologia","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira","Cidadania","Mundo do Trabalho","Projeto de Vida","Segurança"]},{"nome":"3ª série EM","faixa":"17 anos • Ensino Médio (3º colegial)","cor":"#4A5568","img":"serie-13.jpg","paginas":690,"aulas":102,"materias":["Língua Portuguesa","Literatura","Matemática","Biologia","Física","Química","História","Geografia","Filosofia","Sociologia","Arte","Educação Física","Inglês","Raciocínio Lógico","Socioemocional","Vida Diária","Educação Financeira","Cidadania","Mundo do Trabalho","Projeto de Vida","Segurança"]}];
 
+  // ---- seletor de séries ----
+  var tabs = document.getElementById('tabs'), painel = document.getElementById('painel'), folha = document.getElementById('folha'), img = document.getElementById('folha-img');
+  function mostrar(k, foco) {
+    var s = SERIES[k];
+    painel.style.setProperty('--c', s.cor);
+    folha.classList.add('trocando');
+    var nova = new Image();
+    nova.onload = function () { img.src = nova.src; img.alt = 'Página de atividade do ' + s.nome; folha.classList.remove('trocando'); };
+    nova.src = 'img/' + s.img;
+    document.getElementById('s-nome').textContent = s.nome.replace(' EM', ' do Ensino Médio');
+    document.getElementById('s-faixa').textContent = s.faixa;
+    document.getElementById('s-aulas').textContent = s.aulas;
+    document.getElementById('s-pags').textContent = s.paginas;
+    document.getElementById('s-materias').innerHTML = s.materias.map(function (m) { return '<li>' + m + '</li>'; }).join('');
+    [].forEach.call(tabs.children, function (b, i) {
+      b.setAttribute('aria-selected', i === k ? 'true' : 'false');
+      b.tabIndex = i === k ? 0 : -1;
+      if (i === k && foco) { b.focus(); b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); }
+    });
+  }
+  SERIES.forEach(function (s, k) {
+    var b = document.createElement('button');
+    b.className = 'tab'; b.type = 'button'; b.setAttribute('role', 'tab'); b.style.setProperty('--c', s.cor);
+    b.textContent = s.nome;
+    b.addEventListener('click', function () { mostrar(k); });
+    b.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); mostrar((k + (e.key === 'ArrowRight' ? 1 : SERIES.length - 1)) % SERIES.length, true); }
+    });
+    tabs.appendChild(b);
+  });
+  mostrar(3);
+  SERIES.forEach(function (s) { var p = new Image(); p.src = 'img/' + s.img; });
+
+  // ---- checkout + UTMs ----
+  var PASSA = /^(utm_[a-z_]+|src|sck|xcod|fbclid)$/i;
+  var destino = null;
+  try {
+    var u = new URL(CHECKOUT_URL);
+    new URLSearchParams(location.search).forEach(function (v, k) { if (PASSA.test(k) && !u.searchParams.has(k)) u.searchParams.set(k, v); });
+    destino = u.toString();
+  } catch (e) {}
   document.querySelectorAll('[data-checkout]').forEach(function (a) {
     if (destino) { a.href = destino; a.rel = 'noopener'; }
     a.addEventListener('click', function (e) {
       rastrear('InitiateCheckout', { value: PRODUTO.valor, currency: PRODUTO.moeda, content_name: PRODUTO.nome, num_items: 1 });
       if (!destino || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
-      // pequeno atraso para o Pixel registrar o evento antes de sair da página
       if (PIXEL_OK) { e.preventDefault(); setTimeout(function () { location.href = destino; }, 250); }
     });
   });
 
-  // ---- ViewContent: após 15 s OU 50% de rolagem (uma vez só) ----
-  var vcFeito = false;
-  function viewContent() {
-    if (vcFeito) return; vcFeito = true;
-    rastrear('ViewContent', { value: PRODUTO.valor, currency: PRODUTO.moeda, content_name: PRODUTO.nome, content_type: 'product' });
-    window.removeEventListener('scroll', aoRolar);
-  }
-  function aoRolar() {
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    if (max > 0 && window.scrollY / max >= 0.5) viewContent();
-  }
+  // ---- ViewContent ----
+  var vc = false;
+  function viewContent() { if (vc) return; vc = true; rastrear('ViewContent', { value: PRODUTO.valor, currency: PRODUTO.moeda, content_name: PRODUTO.nome, content_type: 'product' }); }
   setTimeout(viewContent, 15000);
-  window.addEventListener('scroll', aoRolar, { passive: true });
+  window.addEventListener('scroll', function () {
+    var max = document.documentElement.scrollHeight - innerHeight;
+    if (max > 0 && scrollY / max >= .5) viewContent();
+  }, { passive: true });
 
-  // ---- Barra fixa: aparece depois do topo, some na oferta e no final ----
+  // ---- barra fixa e entradas ----
   var barra = document.getElementById('barra');
-  if ('IntersectionObserver' in window && barra) {
-    var visiveis = new Set();
-    var alvos = [document.getElementById('topo'), document.getElementById('oferta'), document.querySelector('.final'), document.querySelector('footer')];
-    var io = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (en) { en.isIntersecting ? visiveis.add(en.target) : visiveis.delete(en.target); });
-      var mostrar = visiveis.size === 0;
-      barra.classList.toggle('on', mostrar);
-      barra.setAttribute('aria-hidden', mostrar ? 'false' : 'true');
-      barra.querySelector('a').tabIndex = mostrar ? 0 : -1;
-      document.body.classList.toggle('com-barra', true);
-    }, { threshold: 0 });
-    alvos.forEach(function (el) { if (el) io.observe(el); });
-  }
-
-  // ---- Galeria: ampliar página ----
-  var dlg = document.getElementById('zoom'), zImg = document.getElementById('zoom-img');
-  document.querySelectorAll('#galeria button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var img = b.querySelector('img');
-      if (!img || img.dataset.falhou) return;
-      zImg.src = img.currentSrc || img.src; zImg.alt = img.alt;
-      if (dlg.showModal) dlg.showModal(); else window.open(zImg.src, '_blank');
+  if ('IntersectionObserver' in window) {
+    var vis = new Set();
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { en.isIntersecting ? vis.add(en.target) : vis.delete(en.target); });
+      var on = vis.size === 0;
+      barra.classList.toggle('on', on);
+      barra.setAttribute('aria-hidden', on ? 'false' : 'true');
+      barra.querySelector('a').tabIndex = on ? 0 : -1;
     });
-  });
-  if (dlg) {
-    dlg.querySelector('.fechar').addEventListener('click', function () { dlg.close(); });
-    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    ['topo', 'oferta'].forEach(function (id) { io.observe(document.getElementById(id)); });
+    io.observe(document.querySelector('.final'));
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visto'); io2.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.surge').forEach(function (el, i) { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io2.observe(el); });
+  } else {
+    document.querySelectorAll('.surge').forEach(function (el) { el.classList.add('visto'); });
   }
 })();
 </script>
