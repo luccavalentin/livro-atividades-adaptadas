@@ -185,13 +185,6 @@
   .pagamento { display: flex; justify-content: center; gap: 10px; margin-top: 18px; font-size: .88rem; color: var(--tinta-2); align-items: center; }
   @media (min-width: 900px) { .oferta .w { grid-template-columns: 1fr 1fr; gap: 64px; } }
 
-  /* garantia */
-  .garantia .w { display: grid; gap: 28px; align-items: center; }
-  .selo { width: 168px; height: 168px; margin-inline: auto; }
-  .garantia h2 { font-size: clamp(1.7rem, 3.8vw, 2.5rem); }
-  .garantia p { color: var(--tinta-2); margin-top: 14px; max-width: 60ch; }
-  @media (min-width: 900px) { .garantia .w { grid-template-columns: 200px 1fr; gap: 48px; } }
-
   /* autoria */
   .autoria { border-top: 1px solid var(--linha); }
   .autoria .w { display: grid; gap: 18px; }
@@ -248,7 +241,7 @@
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
 </svg>
 
-<div class="faixa">Entrega imediata por e-mail · PDF para imprimir · <b>Garantia de 7 dias</b></div>
+<div class="faixa">Entrega imediata por e-mail · PDF para imprimir · <b>Pagamento único</b></div>
 
 <header class="hero" id="topo">
   <div class="abas" aria-hidden="true">
@@ -263,7 +256,7 @@
       <a class="btn" data-checkout href="#oferta"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>Quero o livro · R$ 47</a>
       <div class="garantias">
         <span><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Acesso imediato</span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Garantia de 7 dias</span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-print"/></svg>Imprima quantas vezes quiser</span>
         <span><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Pix ou cartão</span>
       </div>
     </div>
@@ -383,25 +376,9 @@
       <a class="btn" data-checkout href="#oferta"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>Quero o livro agora</a>
       <div class="garantias">
         <span><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Chega no seu e-mail</span>
-        <span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>7 dias de garantia</span>
+        <span><svg class="ic" aria-hidden="true"><use href="#i-print"/></svg>Imprima quantas vezes quiser</span>
       </div>
       <p class="pagamento"><svg class="ic" aria-hidden="true" style="width:16px;height:16px"><use href="#i-lock"/></svg>Pagamento seguro pela Kiwify · Pix ou cartão em até 12x</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec garantia" aria-labelledby="t-gar">
-  <div class="w">
-    <svg class="selo" viewBox="0 0 168 168" role="img" aria-label="Selo de garantia de 7 dias">
-      <circle cx="84" cy="84" r="80" fill="#087A3C"/>
-      <circle cx="84" cy="84" r="66" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 6"/>
-      <text x="84" y="92" text-anchor="middle" fill="#fff" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="58">7</text>
-      <text x="84" y="118" text-anchor="middle" fill="#fff" font-family="Atkinson Hyperlegible, sans-serif" font-weight="700" font-size="15" letter-spacing="2">DIAS</text>
-      <text x="84" y="52" text-anchor="middle" fill="#fff" font-family="Atkinson Hyperlegible, sans-serif" font-weight="700" font-size="12" letter-spacing="2">GARANTIA</text>
-    </svg>
-    <div>
-      <h2 id="t-gar">Abra, folheie, imprima. Se não servir, devolvemos tudo.</h2>
-      <p>Você tem 7 dias para conhecer o livro. Se achar que não é para você, peça o reembolso pela própria Kiwify e recebe 100% do valor, sem perguntas.</p>
     </div>
   </div>
 </section>
@@ -425,7 +402,6 @@
     <details><summary>Está de acordo com a BNCC?</summary><p>As atividades foram organizadas a partir das habilidades da BNCC de cada etapa, adaptadas para estudantes que precisam de apoio.</p></details>
     <details><summary>Posso usar com a equipe toda da escola?</summary><p>A compra dá direito ao uso com os seus próprios alunos. Para usar com a equipe inteira de uma escola, responda ao e-mail da compra e combinamos uma licença.</p></details>
     <details><summary>Funciona no celular?</summary><p>Você pode abrir e escolher as páginas no celular, mas o material foi feito para imprimir em A4.</p></details>
-    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Peça o reembolso pela Kiwify e recebe o valor integral.</p></details>
   </div>
 </section>
 
@@ -434,7 +410,7 @@
     <h2 id="t-final">Amanhã cedo, a atividade do seu aluno já está pronta.</h2>
     <p>13 séries, todas as matérias, 13.000 atividades adaptadas. Um pagamento de R$ 47 e acesso imediato.</p>
     <a class="btn" data-checkout href="#oferta"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>Quero o livro completo · R$ 47</a>
-    <div class="garantias"><span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Garantia de 7 dias</span><span><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Entrega imediata</span></div>
+    <div class="garantias"><span><svg class="ic" aria-hidden="true"><use href="#i-print"/></svg>Imprima quantas vezes quiser</span><span><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Entrega imediata</span></div>
   </div>
 </section>
 
